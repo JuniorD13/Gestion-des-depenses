@@ -1,6 +1,8 @@
 "use client"
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react';
+import api from "./api";
+import toast from "react-hot-toast";
 
 
 type Transaction = {
@@ -11,7 +13,25 @@ type Transaction = {
 }
 
 export default function Home() {
-    const [ transactions, setTransaction ] = useState<Transation[]>([])
+    const [transactions, setTransactions] = useState<Transaction[]>([])
+    
+    const getTransactions = async () => {
+        try{
+
+            const res = await api.get<Transaction[]>("transactions/")
+            setTransactions(res.data)
+            toast.success("Transaction Chargée")
+
+        } catch(error){
+            console.error("Erreur Chargement Transactions", error)
+            toast.error("Erreur Chargement Transactions")
+        }
+    };
+
+    useEffect(() => {
+        getTransactions()
+    }, []);
+
     return (
         <button className='btn btn-sm'>
             test
