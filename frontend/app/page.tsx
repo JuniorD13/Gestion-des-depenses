@@ -60,27 +60,24 @@ export default function Home() {
             </div>
           </div>
           <div className="stat-value">{balance.toFixed(2)} $</div>
-
-          <div className="flex flex-col gap-1">
-            <div>
-              <div className="badge badge-soft badge-success">
-                <ArrowUpCircle className="w-6 h-6" />
-                Revenus
-              </div>
-            </div>
-
-            <div className="stat-value">{income.toFixed(2)} $</div>
-
-            <div className="flex flex-col gap-1">
-              <div>
-                <div className="badge badge-soft badge-error">
-                  <ArrowDownCircle className="w-6 h-6" />
-                  Depenses
-                </div>
-              </div>
-              <div className="stat-value">{expense.toFixed(2)} $</div>
+        </div>
+        <div className="flex flex-col gap-1">
+          <div>
+            <div className="badge badge-soft badge-success">
+              <ArrowUpCircle className="w-6 h-6" />
+              Montant
             </div>
           </div>
+          <div className="stat-value">{income.toFixed(2)} $</div>
+        </div>
+        <div className="flex flex-col gap-1">
+          <div>
+            <div className="badge badge-soft badge-error">
+              <ArrowDownCircle className="w-6 h-6" />
+              Depenses
+            </div>
+          </div>
+          <div className="stat-value">{expense.toFixed(2)} $</div>
         </div>
       </div>
     </div>
