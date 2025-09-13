@@ -39,7 +39,11 @@ export default function Home() {
     }
   }
 
-  const deleteTransactions = async (id) => {
+  interface deleteTransactions {
+    (id: string): Promise<void>;
+  }
+
+  const deleteTransactions: deleteTransactions = async (id) => {
     try {
       await api.delete(`transactions/${id}/`)
       getTransactions()
