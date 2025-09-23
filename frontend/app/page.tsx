@@ -115,7 +115,7 @@ export default function Home() {
               SOLD
             </div>
           </div>
-          <div className="stat-value">{balance.toFixed(2)} $</div>
+          <div className="font-extrabold text-4xl">{balance.toFixed(2)} $</div>
         </div>
         <div className="flex flex-col gap-1">
           <div>
@@ -124,7 +124,7 @@ export default function Home() {
               Montant
             </div>
           </div>
-          <div className="stat-value">{income.toFixed(2)} $</div>
+          <div className="font-extrabold text-4xl">{income.toFixed(2)} $</div>
         </div>
         <div className="flex flex-col gap-1">
           <div>
@@ -133,7 +133,7 @@ export default function Home() {
               Depenses
             </div>
           </div>
-          <div className="stat-value">{expense.toFixed(2)} $</div>
+          <div className="font-extrabold text-4xl">{expense.toFixed(2)} $</div>
         </div>
       </div>
 
@@ -142,10 +142,10 @@ export default function Home() {
           <div>
             <div className="badge badge-soft badge-warning gap-1">
               <Activity className="w-4 h-4" />
-              Dpenses Vs Revenus
+              Depenses Vs Revenus
             </div>
           </div>
-          <div>{ratio} %</div>
+          <div className='font-bold'>{ratio} %</div>
         </div>
         <progress
           className="progress progress-warning w-full"
@@ -235,7 +235,7 @@ export default function Home() {
               <input
                 type="number"
                 name="number"
-                placeholder="Revenus ou Depense "
+                placeholder="(Revenus) ou (- Depense) "
                 value={amount}
                 onChange={(e) =>
                   setAmount(e.target.value === "" ? "" : Number(e.target.value))
@@ -246,12 +246,12 @@ export default function Home() {
           </div>
 
           <button
-            className='btn bg-amber-300  font-semibold text-black mt-4 w-full'
+            className="btn bg-amber-300  font-semibold text-black mt-4 w-full"
             onClick={addTransactions}
             disabled={loading}
           >
             <CirclePlus className="w-4 h-4" />
-            Ajouter 
+            Ajouter
           </button>
         </div>
       </dialog>
